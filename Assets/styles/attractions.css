@@ -1,0 +1,1020 @@
+@charset "UTF-8";
+/* Sprite Image   
+// @url: background image url
+// @position: background imag positon
+*/
+/* try passing different sizes and background images to the mixin */
+/* Mixin Media Queries
+================================================== */
+/* @mixin small-mobile{
+      @media only screen and (max-width: $screen-xs) { @content; }
+}
+ */
+.hexagon-shape {
+  position: relative;
+  width: 222px;
+  height: 256px;
+  margin: 0 auto; }
+  .hexagon-shape .hex {
+    width: 220px;
+    /* = (100-3) / 4 */
+    padding-bottom: 254.03412px;
+    /* =  width / sin(60deg) */
+    position: relative;
+    list-style-type: none;
+    float: left;
+    overflow: hidden;
+    visibility: hidden;
+    /* fix for jagged edges in FF on hover transition */
+    -webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+    -moz-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+    transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+    -webkit-backface-visibility: hidden;
+    outline: 1px solid transparent; }
+    .hexagon-shape .hex * {
+      position: absolute;
+      visibility: visible;
+      outline: 1px solid transparent;
+      /* fix for jagged edges in FF on hover transition */ }
+  .hexagon-shape .hex-border {
+    background-image: url("../images/hexagon-big-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-repeat: no-repeat;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+    z-index: 3; }
+  @media only screen and (min-width: 1025px) {
+    .hexagon-shape:hover .hexIn:before {
+      display: block;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 1;
+      filter: alpha(opacity=100); } }
+  .hexagon-shape .hexIn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+    background-color: gray;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    -webkit-transform: skewY(-30deg) rotate(60deg);
+    -moz-transform: skewY(-30deg) rotate(60deg);
+    transform: skewY(-30deg) rotate(60deg);
+    -webkit-backface-visibility: hidden; }
+    @media only screen and (min-width: 768px) {
+      .hexagon-shape .hexIn {
+        background-image: none !important; } }
+    .hexagon-shape .hexIn:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
+  .hexagon-shape img {
+    left: -100%;
+    right: -100%;
+    width: auto;
+    height: 100%;
+    margin: 0 auto; }
+    @media only screen and (max-width: 767px) {
+      .hexagon-shape img {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        visibility: hidden; } }
+  .grayscale .hexagon-shape {
+    -moz-filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: grayscale(100%); }
+
+@-webkit-keyframes jump {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(50%); } }
+
+@-moz-keyframes jump {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(50%); } }
+
+@-ms-keyframes jump {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(50%); } }
+
+@-o-keyframes jump {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(50%); } }
+
+@keyframes jump {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(50%); } }
+
+.img-full-width {
+  width: 100%; }
+
+.overlay-toggle {
+  cursor: pointer; }
+
+#video-preview-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+.attraction-page {
+  z-index: 1;
+  position: relative;
+  position: relative;
+  overflow: hidden; }
+  .attraction-page p {
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    margin-bottom: 20px; }
+    .attraction-page p.large {
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: normal;
+      letter-spacing: 1px; }
+      .attraction-page p.large i {
+        font-size: 26px;
+        line-height: 28px;
+        margin-right: 10px; }
+      @media only screen and (max-width: 767px) {
+        .attraction-page p.large {
+          font-size: 16px;
+          line-height: 18px; } }
+    @media only screen and (max-width: 767px) {
+      .attraction-page p {
+        font-size: 12px;
+        line-height: 14px; } }
+  .attraction-page a:focus {
+    text-decoration: none;
+    outline-width: 0px; }
+
+.attraction-page-content {
+  margin-top: -1px;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  padding: 10px 0; }
+  .attraction-page-content .attraction-page-section {
+    margin-bottom: 40px; }
+    .attraction-page-content .attraction-page-section.wow {
+      visibility: hidden; }
+    .attraction-page-content .attraction-page-section .img-responsive {
+      margin-bottom: 20px; }
+    @media only screen and (max-width: 767px) {
+      .attraction-page-content .attraction-page-section {
+        margin-bottom: 20px; } }
+    .attraction-page-content .attraction-page-section .attraction-page-section-title {
+      margin-bottom: 40px;
+      text-align: center; }
+      .attraction-page-content .attraction-page-section .attraction-page-section-title .img-responsive {
+        margin-bottom: 10px; }
+      @media only screen and (max-width: 767px) {
+        .attraction-page-content .attraction-page-section .attraction-page-section-title {
+          margin-bottom: 20px; } }
+    .attraction-page-content .attraction-page-section .attraction-page-section-content-title {
+      font-size: 22px;
+      line-height: 24px;
+      font-style: italic;
+      margin-bottom: 10px; }
+      .attraction-page-content .attraction-page-section .attraction-page-section-content-title i {
+        margin-right: 5px; }
+      .attraction-page-content .attraction-page-section .attraction-page-section-content-title small {
+        font-size: 18px; }
+        @media only screen and (max-width: 767px) {
+          .attraction-page-content .attraction-page-section .attraction-page-section-content-title small {
+            font-size: 12px;
+            line-height: 14px; } }
+      @media only screen and (max-width: 767px) {
+        .attraction-page-content .attraction-page-section .attraction-page-section-content-title {
+          font-size: 18px;
+          line-height: 20px; } }
+    .attraction-page-content .attraction-page-section .attraction-page-section-content {
+      margin-bottom: 20px; }
+
+.attraction-page-banner-section {
+  position: relative; }
+  .attraction-page-banner-section .banner-background img {
+    width: 100%; }
+  .attraction-page-banner-section .banner-content {
+    width: 90%;
+    z-index: 1;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .attraction-page-banner-section .banner-content .banner-cta {
+      cursor: pointer; }
+    @media only screen and (min-width: 768px) {
+      .attraction-page-banner-section .banner-content {
+        top: 75%;
+        width: 90%; } }
+    @media only screen and (min-width: 1025px) {
+      .attraction-page-banner-section .banner-content {
+        top: 60%;
+        width: 100%; } }
+
+.attraction-page-navigation-section {
+  margin-left: 40px;
+  position: fixed;
+  padding-top: 0 !important;
+  margin-top: 60vh;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2; }
+  .attraction-page-navigation-section ul {
+    width: auto; }
+    .attraction-page-navigation-section ul li {
+      color: #fff;
+      width: 200px; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-navigation-section {
+      display: none; } }
+  @media only screen and (min-width: 768px) {
+    .attraction-page-navigation-section {
+      display: none; } }
+  @media only screen and (min-width: 1025px) {
+    .attraction-page-navigation-section {
+      display: block; } }
+
+.attraction-page-video-section {
+  position: relative;
+  overflow: hidden; }
+
+.video-preview {
+  width: 100%;
+  height: auto; }
+  .video-preview img {
+    width: 100%; }
+
+.video-preview-detail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-1%, -50%);
+  -moz-transform: translate(-1%, -50%);
+  transform: translate(-1%, -50%); }
+  .video-preview-detail .video-preview-title {
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 20px; }
+    .video-preview-detail .video-preview-title small {
+      font-size: 0.5em; }
+
+@media only screen and (max-width: 767px) {
+  .video-preview-detail .video-preview-title {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 15px; } }
+
+.attraction-page-testimonial-section .testimonial-logo {
+  width: 100%; }
+
+.attraction-page-testimonial-section .testimonial-title {
+  text-align: center;
+  font-size: 45px;
+  font-style: italic; }
+  .attraction-page-testimonial-section .testimonial-title::after {
+    content: '”'; }
+  .attraction-page-testimonial-section .testimonial-title::before {
+    content: '“'; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-testimonial-section .testimonial-title {
+      font-size: 30px; } }
+
+.attraction-page-testimonial-section .testimonial-rating {
+  text-align: center;
+  margin-bottom: 20px; }
+  .attraction-page-testimonial-section .testimonial-rating > div {
+    display: inline-block; }
+  .attraction-page-testimonial-section .testimonial-rating .testimonial-rating-score .rating-star {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    border: 2px #fff solid; }
+    .attraction-page-testimonial-section .testimonial-rating .testimonial-rating-score .rating-star.active::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      bottom: 3px;
+      right: 3px;
+      display: block;
+      background-color: #fff;
+      border-radius: 10px; }
+  .attraction-page-testimonial-section .testimonial-rating .testimonial-rating-author {
+    line-height: 18px;
+    vertical-align: middle;
+    margin-left: 4px;
+    font-size: 16px; }
+    .attraction-page-testimonial-section .testimonial-rating .testimonial-rating-author::before {
+      content: "by";
+      margin-right: 4px; }
+
+.attraction-page-testimonial-section .testimonial-comment {
+  font-size: 14px;
+  color: #fff; }
+  .attraction-page-testimonial-section .testimonial-comment a {
+    font-style: normal;
+    text-decoration: underline;
+    color: inherit; }
+
+.attraction-page-article-section .quote {
+  font-style: italic;
+  font-size: 24px;
+  line-height: 26px; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-article-section .quote {
+      font-size: 18px;
+      line-height: 20px; } }
+
+.attraction-page-slider-section .attraction-slider {
+  padding: 0px 120px; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-slider-section .attraction-slider {
+      padding: 0 40px; } }
+  .attraction-page-slider-section .attraction-slider .slick-slide:focus {
+    outline-width: 0; }
+  .attraction-page-slider-section .attraction-slider .slick-prev,
+  .attraction-page-slider-section .attraction-slider .slick-next {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    border-width: 0;
+    background-color: transparent;
+    text-indent: -9999px;
+    width: 60px;
+    height: 60px;
+    background-size: 120px 60px;
+    background-position: 60px 0; }
+    .attraction-page-slider-section .attraction-slider .slick-prev:hover,
+    .attraction-page-slider-section .attraction-slider .slick-next:hover {
+      background-position: 0 0; }
+    @media only screen and (max-width: 767px) {
+      .attraction-page-slider-section .attraction-slider .slick-prev,
+      .attraction-page-slider-section .attraction-slider .slick-next {
+        width: 30px;
+        height: 30px;
+        background-size: 60px 30px;
+        background-position: 30px 0; }
+        .attraction-page-slider-section .attraction-slider .slick-prev:hover,
+        .attraction-page-slider-section .attraction-slider .slick-next:hover {
+          background-position: 0 0; } }
+  .attraction-page-slider-section .attraction-slider .slick-prev {
+    left: 0;
+    background-image: url(../images/attraction-slider-arrow-prev.png); }
+  .attraction-page-slider-section .attraction-slider .slick-next {
+    right: 0;
+    background-image: url(../images/attraction-slider-arrow-next.png); }
+
+.attraction-page-slider-section .attraction-slider-image {
+  width: 100%; }
+
+.attraction-page-slider-section .attraction-slider-title {
+  font-size: 30px;
+  line-height: 30px;
+  color: #fff;
+  margin-bottom: 10px;
+  margin-top: 30px; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-slider-section .attraction-slider-title {
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 26px; } }
+
+.attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item {
+  margin: 0;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  -ms-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s; }
+  .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item img {
+    width: 100%;
+    border: 1px solid #104553; }
+  .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item .gallery-slider-outer-wrapper {
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    width: 100%;
+    padding: 5% 8%; }
+    .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item .gallery-slider-outer-wrapper .gallery-slider-inner-wrapper {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer; }
+      .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item .gallery-slider-outer-wrapper .gallery-slider-inner-wrapper::after {
+        -webkit-transition: all ease 0.5s;
+        -moz-transition: all ease 0.5s;
+        -ms-transition: all ease 0.5s;
+        -o-transition: all ease 0.5s;
+        transition: all ease 0.5s;
+        opacity: 0.7;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: block; }
+  .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item.slick-active .gallery-slider-outer-wrapper {
+    padding: 0; }
+    .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item.slick-active .gallery-slider-outer-wrapper .gallery-slider-inner-wrapper {
+      cursor: auto; }
+      .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item.slick-active .gallery-slider-outer-wrapper .gallery-slider-inner-wrapper::after {
+        opacity: 0; }
+  .attraction-page-gallery-slider-section .attraction-gallery-slider .attraction-gallery-slider-item:focus {
+    outline-width: 0; }
+
+.attraction-page-ticketing-section .ticket-type {
+  font-size: 20px;
+  line-height: 22px;
+  display: block;
+  margin-bottom: 0px; }
+
+.attraction-page-ticketing-section .ticket-price {
+  display: block;
+  font-size: 40px;
+  line-height: 42px;
+  margin-bottom: 10px; }
+
+.attraction-page-ticketing-section .currency-sign {
+  font-size: 30px; }
+
+@media only screen and (max-width: 767px) {
+  .attraction-page-ticketing-section .ticket-type {
+    font-size: 16px;
+    line-height: 18px; }
+  .attraction-page-ticketing-section .ticket-price {
+    font-size: 24px;
+    line-height: 26px; }
+  .attraction-page-ticketing-section .currency-sign {
+    font-size: 20px;
+    line-height: 22px; } }
+
+.attraction-page-thumbnail-slider-section .attraction-thumbnail-slider {
+  margin-bottom: 20px; }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider .slick-slide {
+    border: 1px solid #104553; }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider .slick-slide:focus {
+      outline-width: 0; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider {
+      margin-left: -18px;
+      margin-right: -18px;
+      margin-bottom: 10px; } }
+
+.attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav {
+  padding: 0 80px; }
+  @media only screen and (max-width: 767px) {
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav {
+      padding: 0 30px;
+      margin: 0 -10px; } }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-list {
+    min-height: 1px; }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-slide {
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-slide::after {
+      content: "";
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      -ms-transition: all ease 0.5s;
+      -o-transition: all ease 0.5s;
+      transition: all ease 0.5s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: rgba(0, 0, 0, 0.4); }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-slide:focus {
+      outline-width: 0; }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-slide img {
+      width: 100%;
+      border: 1px solid transparent; }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-current {
+    opacity: 1; }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-current img {
+      border-color: #104553; }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-current::after {
+      background-color: transparent; }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-prev,
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-next {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    border-width: 0;
+    background-color: transparent;
+    text-indent: -9999px;
+    width: 30px;
+    height: 55px;
+    background-size: 60px 55px;
+    background-position: 0 0;
+    padding: 0; }
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-prev:hover,
+    .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-next:hover {
+      background-position: 30px 0; }
+    @media only screen and (max-width: 767px) {
+      .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-prev,
+      .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-next {
+        width: 15px;
+        height: 27.5px;
+        background-size: 30px 27.5px; }
+        .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-prev:hover,
+        .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-next:hover {
+          background-position: 15px 0; } }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-prev {
+    left: 10px;
+    background-image: url(../images/attraction-multi-slider-arrow-prev.png); }
+  .attraction-page-thumbnail-slider-section .attraction-thumbnail-slider-nav .slick-next {
+    right: 10px;
+    background-image: url(../images/attraction-multi-slider-arrow-next.png); }
+
+.attraction-page-multi-slider-section .attraction-multi-slider {
+  padding: 0 50px; }
+  .attraction-page-multi-slider-section .attraction-multi-slider .multi-slider-item {
+    margin: 0 10px;
+    text-align: center; }
+    .attraction-page-multi-slider-section .attraction-multi-slider .multi-slider-item:focus {
+      outline-width: 0; }
+  .attraction-page-multi-slider-section .attraction-multi-slider .multi-slider-item-image {
+    margin-bottom: 20px; }
+    .attraction-page-multi-slider-section .attraction-multi-slider .multi-slider-item-image img {
+      width: 100%; }
+  .attraction-page-multi-slider-section .attraction-multi-slider .multi-slider-item-detail {
+    font-family: "Prompt", "Trebuchet MS", Helvetica, Arial, sans-serif;
+    font-size: 12px; }
+  .attraction-page-multi-slider-section .attraction-multi-slider .multi-slider-item-name {
+    font-family: "Prompt", "Trebuchet MS", Helvetica, Arial, sans-serif;
+    font-weight: bold; }
+
+.attraction-page-multi-slider-section .slick-prev,
+.attraction-page-multi-slider-section .slick-next {
+  position: absolute;
+  top: 40%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  border-width: 0;
+  background-color: transparent;
+  text-indent: -9999px;
+  width: 30px;
+  height: 55px;
+  background-size: 60px 55px;
+  background-position: 0 0; }
+  .attraction-page-multi-slider-section .slick-prev:hover,
+  .attraction-page-multi-slider-section .slick-next:hover {
+    background-position: 30px 0; }
+
+.attraction-page-multi-slider-section .slick-prev {
+  left: 10px;
+  background-image: url(../images/attraction-multi-slider-arrow-prev.png); }
+
+.attraction-page-multi-slider-section .slick-next {
+  right: 10px;
+  background-image: url(../images/attraction-multi-slider-arrow-next.png); }
+
+.vcenter-parent {
+  font-size: 0px; }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
+
+.k-district-page,
+.lotte-attraction-page,
+.asian-attraction-page,
+.thai-thai-attraction-page {
+  /*
+	Fancybox CSS ====================================== */
+  /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+  /* Overlay helper */
+  /* Title helper */ }
+  .k-district-page .fancybox-wrap,
+  .k-district-page .fancybox-skin,
+  .k-district-page .fancybox-outer,
+  .k-district-page .fancybox-inner,
+  .k-district-page .fancybox-image,
+  .k-district-page .fancybox-wrap iframe,
+  .k-district-page .fancybox-wrap object,
+  .k-district-page .fancybox-nav,
+  .k-district-page .fancybox-nav span,
+  .k-district-page .fancybox-tmp,
+  .lotte-attraction-page .fancybox-wrap,
+  .lotte-attraction-page .fancybox-skin,
+  .lotte-attraction-page .fancybox-outer,
+  .lotte-attraction-page .fancybox-inner,
+  .lotte-attraction-page .fancybox-image,
+  .lotte-attraction-page .fancybox-wrap iframe,
+  .lotte-attraction-page .fancybox-wrap object,
+  .lotte-attraction-page .fancybox-nav,
+  .lotte-attraction-page .fancybox-nav span,
+  .lotte-attraction-page .fancybox-tmp,
+  .asian-attraction-page .fancybox-wrap,
+  .asian-attraction-page .fancybox-skin,
+  .asian-attraction-page .fancybox-outer,
+  .asian-attraction-page .fancybox-inner,
+  .asian-attraction-page .fancybox-image,
+  .asian-attraction-page .fancybox-wrap iframe,
+  .asian-attraction-page .fancybox-wrap object,
+  .asian-attraction-page .fancybox-nav,
+  .asian-attraction-page .fancybox-nav span,
+  .asian-attraction-page .fancybox-tmp,
+  .thai-thai-attraction-page .fancybox-wrap,
+  .thai-thai-attraction-page .fancybox-skin,
+  .thai-thai-attraction-page .fancybox-outer,
+  .thai-thai-attraction-page .fancybox-inner,
+  .thai-thai-attraction-page .fancybox-image,
+  .thai-thai-attraction-page .fancybox-wrap iframe,
+  .thai-thai-attraction-page .fancybox-wrap object,
+  .thai-thai-attraction-page .fancybox-nav,
+  .thai-thai-attraction-page .fancybox-nav span,
+  .thai-thai-attraction-page .fancybox-tmp {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    vertical-align: top; }
+  .k-district-page .fancybox-wrap,
+  .lotte-attraction-page .fancybox-wrap,
+  .asian-attraction-page .fancybox-wrap,
+  .thai-thai-attraction-page .fancybox-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8020; }
+  .k-district-page .fancybox-skin,
+  .lotte-attraction-page .fancybox-skin,
+  .asian-attraction-page .fancybox-skin,
+  .thai-thai-attraction-page .fancybox-skin {
+    position: relative;
+    background: #f9f9f9;
+    color: #444;
+    text-shadow: none;
+    /* -webkit-border-radius: 4px;
+		   -moz-border-radius: 4px;
+		        border-radius: 4px; */ }
+  .k-district-page .fancybox-opened,
+  .lotte-attraction-page .fancybox-opened,
+  .asian-attraction-page .fancybox-opened,
+  .thai-thai-attraction-page .fancybox-opened {
+    z-index: 8030; }
+  .k-district-page .fancybox-opened .fancybox-skin,
+  .lotte-attraction-page .fancybox-opened .fancybox-skin,
+  .asian-attraction-page .fancybox-opened .fancybox-skin,
+  .thai-thai-attraction-page .fancybox-opened .fancybox-skin {
+    /* -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+		   -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+		        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); */ }
+  .k-district-page .fancybox-outer,
+  .k-district-page .fancybox-inner,
+  .lotte-attraction-page .fancybox-outer,
+  .lotte-attraction-page .fancybox-inner,
+  .asian-attraction-page .fancybox-outer,
+  .asian-attraction-page .fancybox-inner,
+  .thai-thai-attraction-page .fancybox-outer,
+  .thai-thai-attraction-page .fancybox-inner {
+    position: relative; }
+  .k-district-page .fancybox-inner,
+  .lotte-attraction-page .fancybox-inner,
+  .asian-attraction-page .fancybox-inner,
+  .thai-thai-attraction-page .fancybox-inner {
+    overflow: hidden; }
+  .k-district-page .fancybox-type-iframe .fancybox-inner,
+  .lotte-attraction-page .fancybox-type-iframe .fancybox-inner,
+  .asian-attraction-page .fancybox-type-iframe .fancybox-inner,
+  .thai-thai-attraction-page .fancybox-type-iframe .fancybox-inner {
+    -webkit-overflow-scrolling: touch; }
+  .k-district-page .fancybox-error,
+  .lotte-attraction-page .fancybox-error,
+  .asian-attraction-page .fancybox-error,
+  .thai-thai-attraction-page .fancybox-error {
+    color: #444;
+    font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+    white-space: nowrap; }
+  .k-district-page .fancybox-image,
+  .k-district-page .fancybox-iframe,
+  .lotte-attraction-page .fancybox-image,
+  .lotte-attraction-page .fancybox-iframe,
+  .asian-attraction-page .fancybox-image,
+  .asian-attraction-page .fancybox-iframe,
+  .thai-thai-attraction-page .fancybox-image,
+  .thai-thai-attraction-page .fancybox-iframe {
+    display: block;
+    width: 100%;
+    height: 100%; }
+  .k-district-page .fancybox-image,
+  .lotte-attraction-page .fancybox-image,
+  .asian-attraction-page .fancybox-image,
+  .thai-thai-attraction-page .fancybox-image {
+    max-width: 100%;
+    max-height: 100%; }
+  .k-district-page #fancybox-loading,
+  .k-district-page .fancybox-close,
+  .k-district-page .fancybox-prev span,
+  .k-district-page .fancybox-next span,
+  .lotte-attraction-page #fancybox-loading,
+  .lotte-attraction-page .fancybox-close,
+  .lotte-attraction-page .fancybox-prev span,
+  .lotte-attraction-page .fancybox-next span,
+  .asian-attraction-page #fancybox-loading,
+  .asian-attraction-page .fancybox-close,
+  .asian-attraction-page .fancybox-prev span,
+  .asian-attraction-page .fancybox-next span,
+  .thai-thai-attraction-page #fancybox-loading,
+  .thai-thai-attraction-page .fancybox-close,
+  .thai-thai-attraction-page .fancybox-prev span,
+  .thai-thai-attraction-page .fancybox-next span {
+    /* background-image: url('fancybox_sprite.png'); */ }
+  .k-district-page #fancybox-loading,
+  .lotte-attraction-page #fancybox-loading,
+  .asian-attraction-page #fancybox-loading,
+  .thai-thai-attraction-page #fancybox-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -22px;
+    margin-left: -22px;
+    background-position: 0 -108px;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 8060; }
+  .k-district-page #fancybox-loading div,
+  .lotte-attraction-page #fancybox-loading div,
+  .asian-attraction-page #fancybox-loading div,
+  .thai-thai-attraction-page #fancybox-loading div {
+    width: 44px;
+    height: 44px;
+    /* background: url('fancybox_loading.gif') center center no-repeat; */ }
+  .k-district-page .fancybox-close,
+  .lotte-attraction-page .fancybox-close,
+  .asian-attraction-page .fancybox-close,
+  .thai-thai-attraction-page .fancybox-close {
+    background: url("../images/k-district/ico_close.png") 50% 50% no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 8040;
+    outline: none; }
+  .k-district-page .fancybox-nav,
+  .lotte-attraction-page .fancybox-nav,
+  .asian-attraction-page .fancybox-nav,
+  .thai-thai-attraction-page .fancybox-nav {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    /* background: transparent url('blank.gif'); */
+    /* helps IE */
+    -webkit-tap-highlight-color: transparent;
+    z-index: 8040; }
+  .k-district-page .fancybox-prev,
+  .lotte-attraction-page .fancybox-prev,
+  .asian-attraction-page .fancybox-prev,
+  .thai-thai-attraction-page .fancybox-prev {
+    left: 0; }
+  .k-district-page .fancybox-next,
+  .lotte-attraction-page .fancybox-next,
+  .asian-attraction-page .fancybox-next,
+  .thai-thai-attraction-page .fancybox-next {
+    right: 0; }
+  .k-district-page .fancybox-nav span,
+  .lotte-attraction-page .fancybox-nav span,
+  .asian-attraction-page .fancybox-nav span,
+  .thai-thai-attraction-page .fancybox-nav span {
+    position: absolute;
+    top: 50%;
+    width: 36px;
+    height: 34px;
+    margin-top: -18px;
+    cursor: pointer;
+    z-index: 8040;
+    visibility: hidden; }
+  .k-district-page .fancybox-prev span,
+  .lotte-attraction-page .fancybox-prev span,
+  .asian-attraction-page .fancybox-prev span,
+  .thai-thai-attraction-page .fancybox-prev span {
+    left: 10px;
+    background-position: 0 -36px; }
+  .k-district-page .fancybox-next span,
+  .lotte-attraction-page .fancybox-next span,
+  .asian-attraction-page .fancybox-next span,
+  .thai-thai-attraction-page .fancybox-next span {
+    right: 10px;
+    background-position: 0 -72px; }
+  .k-district-page .fancybox-nav:hover span,
+  .lotte-attraction-page .fancybox-nav:hover span,
+  .asian-attraction-page .fancybox-nav:hover span,
+  .thai-thai-attraction-page .fancybox-nav:hover span {
+    visibility: visible; }
+  .k-district-page .fancybox-tmp,
+  .lotte-attraction-page .fancybox-tmp,
+  .asian-attraction-page .fancybox-tmp,
+  .thai-thai-attraction-page .fancybox-tmp {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    visibility: hidden;
+    max-width: 99999px;
+    max-height: 99999px;
+    overflow: visible !important; }
+  .k-district-page .fancybox-lock,
+  .lotte-attraction-page .fancybox-lock,
+  .asian-attraction-page .fancybox-lock,
+  .thai-thai-attraction-page .fancybox-lock {
+    overflow: hidden !important;
+    width: auto; }
+  .k-district-page .fancybox-lock body,
+  .lotte-attraction-page .fancybox-lock body,
+  .asian-attraction-page .fancybox-lock body,
+  .thai-thai-attraction-page .fancybox-lock body {
+    overflow: hidden !important; }
+  .k-district-page .fancybox-lock-test,
+  .lotte-attraction-page .fancybox-lock-test,
+  .asian-attraction-page .fancybox-lock-test,
+  .thai-thai-attraction-page .fancybox-lock-test {
+    overflow-y: hidden !important; }
+  .k-district-page .fancybox-overlay,
+  .lotte-attraction-page .fancybox-overlay,
+  .asian-attraction-page .fancybox-overlay,
+  .thai-thai-attraction-page .fancybox-overlay {
+    background-color: rgba(70, 70, 70, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    z-index: 8010; }
+  .k-district-page .fancybox-overlay-fixed,
+  .lotte-attraction-page .fancybox-overlay-fixed,
+  .asian-attraction-page .fancybox-overlay-fixed,
+  .thai-thai-attraction-page .fancybox-overlay-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0; }
+  .k-district-page .fancybox-lock .fancybox-overlay,
+  .lotte-attraction-page .fancybox-lock .fancybox-overlay,
+  .asian-attraction-page .fancybox-lock .fancybox-overlay,
+  .thai-thai-attraction-page .fancybox-lock .fancybox-overlay {
+    overflow: auto;
+    overflow-y: scroll; }
+  .k-district-page .fancybox-title,
+  .lotte-attraction-page .fancybox-title,
+  .asian-attraction-page .fancybox-title,
+  .thai-thai-attraction-page .fancybox-title {
+    visibility: hidden;
+    font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    text-shadow: none;
+    z-index: 8050; }
+  .k-district-page .fancybox-opened .fancybox-title,
+  .lotte-attraction-page .fancybox-opened .fancybox-title,
+  .asian-attraction-page .fancybox-opened .fancybox-title,
+  .thai-thai-attraction-page .fancybox-opened .fancybox-title {
+    visibility: visible; }
+  .k-district-page .fancybox-title-float-wrap,
+  .lotte-attraction-page .fancybox-title-float-wrap,
+  .asian-attraction-page .fancybox-title-float-wrap,
+  .thai-thai-attraction-page .fancybox-title-float-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    margin-bottom: -35px;
+    z-index: 8050;
+    text-align: center; }
+  .k-district-page .fancybox-title-float-wrap .child,
+  .lotte-attraction-page .fancybox-title-float-wrap .child,
+  .asian-attraction-page .fancybox-title-float-wrap .child,
+  .thai-thai-attraction-page .fancybox-title-float-wrap .child {
+    display: inline-block;
+    margin-right: -100%;
+    padding: 2px 20px;
+    background: transparent;
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-shadow: 0 1px 2px #222;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 24px;
+    white-space: nowrap; }
+  .k-district-page .fancybox-title-outside-wrap,
+  .lotte-attraction-page .fancybox-title-outside-wrap,
+  .asian-attraction-page .fancybox-title-outside-wrap,
+  .thai-thai-attraction-page .fancybox-title-outside-wrap {
+    position: relative;
+    margin-top: 10px;
+    color: #fff; }
+  .k-district-page .fancybox-title-inside-wrap,
+  .lotte-attraction-page .fancybox-title-inside-wrap,
+  .asian-attraction-page .fancybox-title-inside-wrap,
+  .thai-thai-attraction-page .fancybox-title-inside-wrap {
+    padding-top: 10px; }
+  .k-district-page .fancybox-title-over-wrap,
+  .lotte-attraction-page .fancybox-title-over-wrap,
+  .asian-attraction-page .fancybox-title-over-wrap,
+  .thai-thai-attraction-page .fancybox-title-over-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    padding: 10px;
+    background: #000;
+    background: rgba(0, 0, 0, 0.8); }
+
+.ani-elm {
+  -webkit-transition: all 1.2s ease;
+  -moz-transition: all 1.2s ease;
+  -ms-transition: all 1.2s ease;
+  transition: all 1.2s ease; }
+  @media only screen and (max-width: 767px) {
+    .ani-elm {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1; } }
+  @media only screen and (min-width: 768px) {
+    .ani-elm {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1; } }
+  @media only screen and (min-width: 1025px) {
+    .ani-elm {
+      -webkit-transform: translateY(35px);
+      transform: translateY(35px);
+      opacity: 0; } }
+
+.ani-elm.show-ani {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0); }
