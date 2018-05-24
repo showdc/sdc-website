@@ -574,7 +574,6 @@
                                                                             <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Visit</span></a>
                                                                             <div class="dropdown-menu">
     <ul class="sub-menu">
-    <ul class="sub-menu">
         <li>
             <div class="yamm-content container">
     <div class="row-content">
@@ -636,13 +635,17 @@
 </div>
         </li>
     </ul>
-</li>
-</div>>
     <!-- end submenu-->
 </div>
                                                                             <!-- end dropdown-menu-->
-                                                                       </li>
-                                                                        
+                                                                      </li>
+                                                                        <li class="dropdown yamm-fw hover item5">
+                                                                              <a href="../th-TH/DirectoryFloor1.html" class="dropdown-toggle"><span>Directory</span></a>
+                                                                            <div class="dropdown-menu">
+    
+    <!-- row-content-->
+</div>
+        </li>
     </ul>
 </div>
                                                                             <!-- end dropdown-menu-->
@@ -1980,7 +1983,7 @@ Courtesy brought to you by TM SHOW Corp                        </div>
                             <div class="col-xs-12 col-sm-6 col-md-12">
                                 <div class="attraction-page-section-content-title">
                                     <i aria-hidden="true" class="fa fa-map-o"> </i>
-                                        <span>Address & Opening Hours</span>
+                                        <span>Address &amp; Opening Hours</span>
                                 </div>
                                 <div class="attraction-page-section-content">
 <p class="large">SHOW DC Ground Floor<br>
@@ -2082,6 +2085,7 @@ Courtesy brought to you by TM SHOW Corp                        </div>
         fn_herobanner();
     }
 </script><div class="main container-full widget-footer-component home-content">
+    <div class="main container-full widget-footer-component home-content">
     <div class="social-component">
     <div class="container">
         <h5 class="text-center">ติดตามความเคลื่อนไหวของ SHOW DC</h5>
@@ -2093,25 +2097,7 @@ Courtesy brought to you by TM SHOW Corp                        </div>
         </div>
     </div>
 </div>
-    <div class="sign-up-component">
-    <div class="container">
-        <div class="form-subcribe" id="subscribe_before">
-            <h5 class="text-center">สมัครบริการแจ้งข่าวสารและโปรโมชั่นล่าสุด จาก SHOW DC</h5>
-            <div id="subcriber">
-                <div class="form-group">
-
-                    <input type="email" placeholder="กรอกอีเมลของคุณ" id="subsciption_email" class="form-control">
-                    <p id="email_required_subscribe" class="form-subcribe-success" style="display:none; font-size:15px;">กรุณาใส่อีเมลของคุณ </p>
-                    <p id="email_invalid_subscribe" class="form-subcribe-success" style="display:none; font-size:15px;">อีเมลนี้ไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง</p>
-                    <p id="email_existed_subscribe" class="form-subcribe-success" style="display:none; font-size:15px;">Your email has existed in our system.</p>
-                </div>
-                <button id="subscribe" class="btn btn-default center-block" type="submit">สมัครสมาชิก</button>
-            </div>
-        </div>
-        <div class="form-subcribe-success hide" id="subscribe_after">
-            <h2>Thank you for subscribing <br /> to the SHOW DC newsletter.</h2>
-        </div>
-    </div>
+   
 </div>
 
 <script type="text/javascript">
@@ -2230,17 +2216,17 @@ Courtesy brought to you by TM SHOW Corp                        </div>
         </div>
             <div class="footer-bottom">
                     <a href="../th-TH.html" class="logo-small">
-                        <img src='../-/media/ShowDC/Website/logod9e2.png?h=32&amp;w=176&amp;la=th-TH&amp;hash=24DEBD2615D91B37C446851F4DBA86F33F86CAE9' alt='' />
+                        <img src='media/ShowDC/Website/logod9e2.png?h=32&amp;w=176&amp;la=th-TH&amp;hash=24DEBD2615D91B37C446851F4DBA86F33F86CAE9' alt='' />
                     </a>
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-md-push-6 col-sm-push-6 text-right">
                             <span>เยี่ยมชมเว็บไซต์ SHOW DC ในภาษาอื่น </span>
                             <span class="language-footer">
-                                        <a href="../Bangkok-Tourist-Terminal.html?language=en&amp;returnUrl=http://www.showdc.co.th/th-TH/Bangkok-Tourist-Terminal">
-                                            <img src="../temp/iconcache/flags/32x32/flag_great_britain.png" alt="English">
+                                        <a href="../Deal-Listing.html?language=en&amp;returnUrl=http://www.showdc.co.th/th-TH/Deal-Listing">
+                                            <img src="temp/iconcache/flags/32x32/flag_great_britain.png" alt="English">
                                         </a>
-                                        <a href="../zh-CN/th-TH/Bangkok-Tourist-Terminal.html?language=zh-CN&amp;returnUrl=http://www.showdc.co.th/th-TH/Bangkok-Tourist-Terminal">
-                                            <img src="../temp/iconcache/flags/32x32/flag_china.png" alt="Chinese">
+                                        <a href="../zh-CN/th-TH/Deal-Listing.html?language=zh-CN&amp;returnUrl=http://www.showdc.co.th/th-TH/Deal-Listing">
+                                            <img src="temp/iconcache/flags/32x32/flag_china.png" alt="Chinese">
                                         </a>
 
                             </span>
@@ -2273,8 +2259,13 @@ Courtesy brought to you by TM SHOW Corp                        </div>
     <script type="text/javascript" src="../Assets/plugins/momentjs/locales/th.js"></script>
     <script type="text/javascript" src="../Assets/plugins/momentjs/locales/zh-cn.js"></script>
     <script src="../Assets/scripts/showdc.js"></script>
-    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            showdc.deals.init();
+        });
+    </script>
+
 </body>
 
-<!-- Mirrored from www.showdc.co.th/th-TH/Bangkok-Tourist-Terminal by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Mar 2018 07:10:16 GMT -->
+<!-- Mirrored from www.showdc.co.th/th-TH/Deal-Listing by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Mar 2018 07:13:14 GMT -->
 </html>
