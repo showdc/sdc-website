@@ -679,6 +679,40 @@
 
 
         <div class="one-column column-layout">
+
+
+        	   <div class="one-column column-layout">
+    
+
+
+
+    <div id="my_popup">
+        <center>
+            <div style="width:60% height:60%";>
+                <img src="./images/popup/modal_background.jpg" style="width: 60%; height: 60%; margin: 0px; padding: 0px;">
+                <div style="background-color: red; width: 60%; margin: 0px; padding: 0px;">
+                    <a href="https://www.facebook.com/showdc.co.th">
+                      
+                    </a>
+                   
+                </div>
+            </div>
+        </center>
+    </div>
+
+  
+    <script>
+        $(document).ready(function() {
+            
+            $('#my_popup').popup({
+                opacity: 0.3,
+                transition: 'all 0.3s',
+                detach: true,
+                autoopen: true                
+            });
+           
+        });
+    </script>
     
 
 <div class="main container-full show-tickit-content home-content full-bg-img">
@@ -1269,17 +1303,20 @@
 
     </div>
     <!-- end wrapper-->
+   
     <script src="Assets/scripts/main.js"></script>
      <script src="Assets/scripts/vendor/jquery.validate.min.js"></script>
     <script src="Assets/scripts/vendor/jquery.unobtrusive-ajax.min.js"></script>
     <script src="Assets/scripts/vendor/jquery.validate.unobtrusive.min.js"></script>
-    <script src="Assets/scripts/vendor/jquery.number.min.js"></script>
+    
+    <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
     <script type="text/javascript" src="Assets/plugins/jquery.countdownTimer.min.js"></script>
     <script type="text/javascript" src="Assets/plugins/momentjs/locales/th.js"></script>
     <script type="text/javascript" src="Assets/plugins/momentjs/locales/zh-cn.js"></script>
+
     <script src="Assets/scripts/showdc.js"></script>
-    
-</body>
+
+
 
 <!-- Mirrored from www.showdc.co.th/zh-CN by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Mar 2018 07:06:54 GMT -->
 </html>
